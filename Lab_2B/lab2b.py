@@ -2,13 +2,12 @@
 SE126.02
 Gabriel Carrillo
 01/21/2023
-Lab 2A
+Lab 2B
 
 Variables Declared:
+===================
     computers               List of computers, data imported from csv file
     numComputers            Number of computers processed in the csv file
-
-
 """
 
 
@@ -34,13 +33,14 @@ def update_brand(computers):
             data[1] = 'Gateway'
 
 # function to check if row has 1 disk
-# if row has 1 disk put a "" placeholder for second disk in index 
+# if row has 1 disk put a "" placeholder for second disk in the index location 
 def update_secondDisk(computers):
     for data in computers:
         if (int(data[5]) == 1):
             data.insert(6, '')
 
-
+#============================================================================
+# END OF FUNCTIONS
 
 # open csv file and parse the records from the csv file
 with open (r"C:\Users\gcarr\Desktop\Local Git Repository\SE126_02-Intermediate_Python\Lab_2B\lab2b.csv") as csvfile:
@@ -58,8 +58,6 @@ update_brand(computers)
 
 # run the update_secondDisk function
 update_secondDisk(computers)
-
-
 
 # print the infomation with left-justify to align data correctly
 print("Type".ljust(9) + "Brand".ljust(8) + "CPU".ljust(5) + "RAM".ljust(5) + "1st Disk".ljust(10) + "No HDD".ljust(8) + "2nd Disk".ljust(10) + "OS".ljust(4) + "YR")

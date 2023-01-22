@@ -12,7 +12,6 @@ Variables Declared:
     capacity            Number of capacity from csv file
     attendees           Number of attendees from csv file
     overage             Calculated overage of attendees from each room
-
 """
 
 import csv
@@ -20,6 +19,12 @@ import csv
 overageRooms = []
 numOverRooms = 0
 numRecords = 0
+
+# function to calculate overage of attendees from each room
+def calc_overage(overageRooms):
+    for room in overageRooms:
+        overage = int(room[2]) - int(room[1])
+        room.append(overage)
 
 # open csv file and parse the records from the csv file
 with open (r"C:\Users\gcarr\Desktop\Local Git Repository\SE126_02-Intermediate_Python\Lab_2A\lab2a.csv") as csvfile:
@@ -36,11 +41,8 @@ with open (r"C:\Users\gcarr\Desktop\Local Git Repository\SE126_02-Intermediate_P
     
         numRecords += 1
 
-    # parse through rooms in Overage Room List and calculate the overage then append the info to list
-    for room in overageRooms:
-        overage = int(room[2]) - int(room[1])
-        room.append(overage)
-
+# run the calculate overage function
+calc_overage(overageRooms)
      
 # print the infomation with left-justify to align data correctly
 print("Room".ljust(20) + "Capacity".ljust(15) + "Attendees".ljust(15) + "Overage")
