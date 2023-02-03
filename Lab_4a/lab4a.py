@@ -34,19 +34,18 @@ osList = []
 yearList = []
 ramComputers = 0
 
+#===== FUNCTIONS =======
+
 # function to search list for ram greater than 8GB
 def search_ram(ramList):
     ramComputers = 0
     for ram in ramList:
-       if int(ram) > 8:
+       if ram > 8:
            ramComputers += 1
     return ramComputers
 
-                   
-
-#============================================================================
-# END OF FUNCTIONS
-
+                
+#==== MAIN PROGRAM ======
 
 # open csv file and parse the records from the csv file
 with open (r"C:\Users\gcarr\Desktop\Local Git Repository\SE126_02-Intermediate_Python\Lab_4a\lab4a.csv") as csvfile:
