@@ -82,7 +82,7 @@ def more_seats():
     return answer
 
 # fucntion to update the seats
-def update_seats(seatRow, seatCol):
+def assign_seats(seatRow, seatCol):
     if seats[seatRow][seatCol] == 'X':
         print("\nSeat is already taken!")
     else:
@@ -111,7 +111,7 @@ while True:
     seatRow = get_seat_row()
     seatCol = get_seat_col()
 
-    update_seats(seatRow, seatCol)
+    assign_seats(seatRow, seatCol)
 
     print("\nSeats have been update see below ... \n")
     print_seats(seats)
